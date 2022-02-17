@@ -12,26 +12,28 @@
 #
 import os
 import sys
-from unittest.mock import patch
+import datetime
 
-# Copy pasting be gone!
-sys.path.insert(0, os.path.abspath(".."))
+try:
+    from importlib.metadata import version as importlib_metadata_version
+except (ImportError, ModuleNotFoundError):
+    from importlib_metadata import version as importlib_metadata_version
 
-with patch("setuptools.setup"):
-    from setup import ORG, IMPORT_NAME, DESCRIPTION, VERSION, AUTHOR_NAME
-
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+# sys.path.append(
+#     os.path.abspath(os.path.join(os.path.dirname(__file__), "_ext"))
+# )
 
 # -- Project information -----------------------------------------------------
 
-project = IMPORT_NAME
-copyright = "2019, Intel Corperation"
-author = AUTHOR_NAME
+project = "project-example-for-python"
+author = project + " Authors"
+copyright = "2021 - %d, %s" % (datetime.datetime.today().year, author)
 
 # The short X.Y version
-version = VERSION
-
+version = importlib_metadata_version("project-example-for-python")
 # The full version, including alpha/beta/rc tags
-release = VERSION
+release = version
 
 
 # -- General configuration ---------------------------------------------------
@@ -40,10 +42,8 @@ release = VERSION
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx.ext.autodoc",
-    "sphinx.ext.viewcode",
     "sphinx.ext.intersphinx",
-    "sphinxcontrib.asyncio",
+    "sphinx.ext.autodoc",
 ]
 
 intersphinx_mapping = {"python": ("https://docs.python.org/3", None)}

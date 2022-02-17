@@ -1,0 +1,36 @@
+name: Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
+
+jobs:
+  pages:
+    name: Build GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build docs
+      run: |
+        python3 -m pip install -U pip
+        python3 -m pip install -U setuptools wheel
+        python3 -m pip install .[dev]
+        python3 -m sphinx -W -b html docs built_html_docs/
+        echo ${{ github.ref }}
+    - name: Deploy to GitHub Pages
+      if: ${{ github.ref == 'refs/head/main' }}
+      uses: crazy-max/ghaction-github-pages@v2
+      with:
+        target_branch: gh-pages
+        build_dir: built_html_docs
+        jekyll: false
+        verbose: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

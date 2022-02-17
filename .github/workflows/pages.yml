@@ -3,12 +3,12 @@ name: Pages
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     types:
       - opened
     branches:
-      - main
+      - master
 
 jobs:
   pages:
@@ -25,7 +25,7 @@ jobs:
         python3 -m sphinx -W -b html docs built_html_docs/
         echo ${{ github.ref }}
     - name: Deploy to GitHub Pages
-      if: ${{ github.ref == 'refs/head/main' }}
+      if: ${{ github.ref == 'refs/head/master' }}
       uses: crazy-max/ghaction-github-pages@v2
       with:
         target_branch: gh-pages

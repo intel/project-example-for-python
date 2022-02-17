@@ -5,12 +5,11 @@ def outer_script():
 
     >>> scotty.beam(me, "up")
     """
-    print('It\'s a bird it\'s a plane!')
-    print('NO! It\'s a SCRIPT!!')
+    print("It's a bird it's a plane!")
+    print("NO! It's a SCRIPT!!")
 
 
 class SomeClass:
-
     def hello(self):
         """
         This class is useful

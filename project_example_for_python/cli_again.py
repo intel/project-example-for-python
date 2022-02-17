@@ -1,2 +1,2 @@
 def SCRIPTSCRIPT():
-    print('SCRIPT SCRIPT!')
+    print("SCRIPT SCRIPT!")

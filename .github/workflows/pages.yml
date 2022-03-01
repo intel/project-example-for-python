@@ -25,7 +25,7 @@ jobs:
         python3 -m sphinx -W -b html docs built_html_docs/
         echo ${{ github.ref }}
     - name: Deploy to GitHub Pages
-      if: ${{ github.ref == 'refs/head/master' }}
+      if: ${{ github.ref == 'refs/heads/master' }}
       uses: crazy-max/ghaction-github-pages@v2
       with:
         target_branch: gh-pages

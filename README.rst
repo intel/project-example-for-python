@@ -8,15 +8,31 @@ can copy.
 Files required to create a Python package (these require find and replacing):
 
 - https://github.com/intel/project-example-for-python/blob/master/pyproject.toml
+
   - https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+
 - https://github.com/intel/project-example-for-python/blob/master/setup.cfg
+
   - https://setuptools.pypa.io/en/latest/userguide/declarative_config.html
   - https://setuptools.pypa.io/en/latest/userguide/distribution.html
+
   - ``long_description_content_type = "text/markdown"``
+
     - https://setuptools.pypa.io/en/latest/userguide/declarative_config.html?highlight=long_description#metadata
+
 - https://github.com/intel/project-example-for-python/blob/master/setup.py
+
 - https://github.com/intel/project-example-for-python/blob/master/MANIFEST.in
-  -  https://setuptools.pypa.io/en/latest/userguide/miscellaneous.html
+
+  - https://setuptools.pypa.io/en/latest/userguide/miscellaneous.html
+
+- pip help for installing from git repos
+
+  - https://pip.pypa.io/en/stable/cli/pip_install/#examples
+  
+  - https://setuptools.pypa.io/en/latest/userguide/dependency_management.html#direct-url-dependencies
+  
+    - **"PyPI and other standards-conformant package indices do not accept packages that declare dependencies using direct URLs. pip will accept them when installing packages from the local filesystem or from another URL, however."**
 
 Install From Git Repo
 *********************

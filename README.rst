@@ -5,6 +5,19 @@ This is an example repo to show you how to create a Python package which can be
 published on PiPy. It also includes documentation generation and CI scripts you
 can copy.
 
+Files required to create a Python package (these require find and replacing):
+
+- https://github.com/intel/project-example-for-python/blob/master/pyproject.toml
+  - https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+- https://github.com/intel/project-example-for-python/blob/master/setup.cfg
+  - https://setuptools.pypa.io/en/latest/userguide/declarative_config.html
+  - https://setuptools.pypa.io/en/latest/userguide/distribution.html
+  - ``long_description_content_type = "text/markdown"``
+    - https://setuptools.pypa.io/en/latest/userguide/declarative_config.html?highlight=long_description#metadata
+- https://github.com/intel/project-example-for-python/blob/master/setup.py
+- https://github.com/intel/project-example-for-python/blob/master/MANIFEST.in
+  -  https://setuptools.pypa.io/en/latest/userguide/miscellaneous.html
+
 Install From Git Repo
 *********************
 

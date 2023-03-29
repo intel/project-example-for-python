@@ -68,7 +68,4 @@ jobs:
         set -x
         pip install -U pip
         pip install -U .[dev]
-    - name: Test
-      run: |
-        set -x
-        python -m unittest discover -v
+    - uses: intel/project-example-for-python@github-action-python-run-unittests

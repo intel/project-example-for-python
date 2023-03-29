@@ -1,0 +1,16 @@
+name: 'Run Python Unit Tests'
+description: 'Run Python Unit Tests'
+inputs:
+  tests:
+    description: 'Directory of tests'
+    required: true
+    default: 'tests'
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      env:
+        TESTS: "${{ inputs.tests }}"
+      run: |
+        set -x
+        python -m unittest discover -v "${TESTS}"

@@ -9,6 +9,13 @@ class MiscClass:
         class MyClass:
             @classmethod
             def classception(cls2):
-                return type("NewClass", (cls1, cls2,), {"FEED": "FACE"})
+                return type(
+                    "NewClass",
+                    (
+                        cls1,
+                        cls2,
+                    ),
+                    {"FEED": "FACE"},
+                )
 
         return MyClass

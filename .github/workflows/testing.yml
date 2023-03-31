@@ -23,7 +23,7 @@ jobs:
         pip install -U .[dev]
     - name: Run check
       run: |
-        black --check .
+        black --target-version py37 --check .
 
   test:
     runs-on: ubuntu-latest

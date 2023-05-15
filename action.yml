@@ -5,12 +5,20 @@ inputs:
     description: 'Directory of tests'
     required: true
     default: 'tests'
+  coverage:
+    description: 'Run with coverage'
+    required: true
+    default: false
 runs:
   using: "composite"
   steps:
     - shell: bash
       env:
         TESTS: "${{ inputs.tests }}"
+        COVERAGE: "${{ inputs.coverage }}"
       run: |
         set -x
-        python -m unittest discover -v "${TESTS}"
+        if [ "x${COVERAGE}" != "x" ]; then
+          COVERAGE="coverage -m"
+        fi
+        python -m ${COVERAGE} unittest discover -v "${TESTS}"
